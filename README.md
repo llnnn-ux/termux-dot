@@ -2,5 +2,5 @@
 
 ```bash
 pkg up
-curl https://git.io/JIP60 | bash
+curl -L https://git.io/JIP60 | bash
 ```
