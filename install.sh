@@ -9,11 +9,11 @@ git clone --depth=1 https://github.com/denysdovhan/spaceship-prompt
 cd ~
 git clone https://github.com/llnnn-ux/termux-dot
 mkdir ~/.termux
-ln -s ~/termux-dot/.termux/termux.properties ~/.termux/termux.properties
-ln -s ~/termux-dot/.aliasrc ~/.aliasrc
-ln -s ~/termux-dot/.zprofile ~/.zprofile
-ln -s ~/termux-dot/.zshrc ~/.zshrc
-ln -s ~/termux-dot/.gitconfig ~/.gitconfig
-ln -s ~/termux-dot/.vimrc ~/.vimrc
-mkdir $PREFIX/share/zsh/site-functions; ln -s ~/.zsh/spaceship-prompt/spaceship.zsh $PREFIX/share/zsh/site-functions/prompt_spaceship_setup
+ln -sf ~/termux-dot/.termux/termux.properties ~/.termux/termux.properties
+ln -sf ~/termux-dot/.aliasrc ~/.aliasrc
+ln -sf ~/termux-dot/.zprofile ~/.zprofile
+ln -sf ~/termux-dot/.zshrc ~/.zshrc
+ln -sf ~/termux-dot/.gitconfig ~/.gitconfig
+ln -sf ~/termux-dot/.vimrc ~/.vimrc
+mkdir $PREFIX/share/zsh/site-functions; ln -sf ~/.zsh/spaceship-prompt/spaceship.zsh $PREFIX/share/zsh/site-functions/prompt_spaceship_setup
 chsh -s zsh
