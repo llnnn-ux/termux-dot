@@ -14,6 +14,7 @@ git clone https://github.com/llnnn-ux/termux-dot
 mkdir ~/.termux
 echo "Linking dotfiles..."
 ln -sf ~/termux-dot/.termux/termux.properties ~/.termux/termux.properties
+ln -sf ~/termux-dot/.termux/colors.properties ~/.termux/colors.properties
 ln -sf ~/termux-dot/.aliasrc ~/.aliasrc
 ln -sf ~/termux-dot/.zprofile ~/.zprofile
 ln -sf ~/termux-dot/.zshrc ~/.zshrc
