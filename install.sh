@@ -21,4 +21,4 @@ ln -sf ~/termux-dot/.gitconfig ~/.gitconfig
 ln -sf ~/termux-dot/.vimrc ~/.vimrc
 mkdir $PREFIX/share/zsh/site-functions; ln -sf ~/.zsh/spaceship-prompt/spaceship.zsh $PREFIX/share/zsh/site-functions/prompt_spaceship_setup
 chsh -s zsh
-echo "Done!"
+echo "Done\!"
