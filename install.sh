@@ -20,5 +20,6 @@ ln -sf ~/termux-dot/.zshrc ~/.zshrc
 ln -sf ~/termux-dot/.gitconfig ~/.gitconfig
 ln -sf ~/termux-dot/.vimrc ~/.vimrc
 mkdir $PREFIX/share/zsh/site-functions; ln -sf ~/.zsh/spaceship-prompt/spaceship.zsh $PREFIX/share/zsh/site-functions/prompt_spaceship_setup
+wget "https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/JetBrainsMono/Regular/complete/JetBrains%20Mono%20Regular%20Nerd%20Font%20Complete.ttf?raw=true" -O ~/.termux/font.ttf
 chsh -s zsh
 echo "Done!\nRestart Termux"
