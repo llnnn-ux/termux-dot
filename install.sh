@@ -1,5 +1,5 @@
 echo "Installing packages..."
-pkg i -y openssh nano python nyancat git wget zsh neofetch fish curl proot file aria2 p7zip neovim bat exa dnsutils nodejs
+pkg i -y openssh nano python nyancat git wget zsh neofetch fish curl proot file aria2 p7zip neovim bat exa dnsutils nodejs fzf
 echo "Installing pip packages..."
 pip install -U youtube-dl setuptools pip
 echo "Cloning zsh plugins..." 
