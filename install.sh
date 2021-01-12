@@ -20,6 +20,8 @@ ln -sf ~/termux-dot/.zprofile ~/.zprofile
 ln -sf ~/termux-dot/.zshrc ~/.zshrc
 ln -sf ~/termux-dot/.gitconfig ~/.gitconfig
 ln -sf ~/termux-dot/.vimrc ~/.vimrc
+mkdir ~/.vim; ln -sf ~/termux-dot/.vim/dein.toml ~/.vim/dein.toml
+mkdir -p ~/.config/nvim; ln -sf ~/termux-dot/.config/nvim/init.vim ~/.config/nvim/init.vim
 mkdir $PREFIX/share/zsh/site-functions; ln -sf ~/.zsh/spaceship-prompt/spaceship.zsh $PREFIX/share/zsh/site-functions/prompt_spaceship_setup
 wget "https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/JetBrainsMono/Regular/complete/JetBrains%20Mono%20Regular%20Nerd%20Font%20Complete.ttf?raw=true" -qO ~/.termux/font.ttf
 chsh -s zsh
