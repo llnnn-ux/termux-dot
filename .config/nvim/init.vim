@@ -51,3 +51,4 @@ syntax on
 filetype plugin indent on
 colorscheme nord
 set helplang=ja,en
+set nu
