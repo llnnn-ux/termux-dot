@@ -5,6 +5,9 @@ repo = 'arcticicestudio/nord-vim'
 repo = 'vim-airline/vim-airline'
 
 [[plugins]]
+repo = 'vim-airline/vim-airline-themes'
+
+[[plugins]]
 repo = 'junegunn/fzf'
 build_on = '''
 ./install -all
