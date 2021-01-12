@@ -23,4 +23,7 @@ ln -sf ~/termux-dot/.vimrc ~/.vimrc
 mkdir $PREFIX/share/zsh/site-functions; ln -sf ~/.zsh/spaceship-prompt/spaceship.zsh $PREFIX/share/zsh/site-functions/prompt_spaceship_setup
 wget "https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/JetBrainsMono/Regular/complete/JetBrains%20Mono%20Regular%20Nerd%20Font%20Complete.ttf?raw=true" -qO ~/.termux/font.ttf
 chsh -s zsh
+echo "Setting vim plugins"
+cd ~
+curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh -O; chmod 755 ~/installer.sh; ~/installer.sh ~/.dein
 echo "Done!\nRestart Termux"
