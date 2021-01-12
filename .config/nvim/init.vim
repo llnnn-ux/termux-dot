@@ -49,6 +49,8 @@ endif
 
 syntax on
 filetype plugin indent on
+set rtp+=~/.dein/repos/github.com/arcticice
+studio/nord-vim/
 colorscheme nord
 set helplang=ja,en
 set nu
