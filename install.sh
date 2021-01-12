@@ -25,5 +25,5 @@ wget "https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/JetBrain
 chsh -s zsh
 echo "Setting vim plugins"
 cd ~
-curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh -O; chmod 755 ~/installer.sh; ~/installer.sh ~/.dein
+curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh -O; chmod 755 ~/installer.sh; ~/installer.sh ~/.dein; rm -f ~/installer.sh
 echo "Done!\nRestart Termux"
