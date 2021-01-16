@@ -9,3 +9,6 @@ if [ -z "$SSH_AUTH_SOCK" ]; then
    fi
    eval `cat .ssh/ssh-agent`
 fi
+for id in $(ls ~/.ssh/id*|grep -v pub); do
+	ssh-add $id
+done
