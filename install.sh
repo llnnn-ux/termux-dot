@@ -10,7 +10,7 @@ git clone https://github.com/zsh-users/zsh-completions
 git clone https://github.com/zsh-users/zsh-history-substring-search
 git clone --depth=1 https://github.com/denysdovhan/spaceship-prompt
 cd ~
-git clone https://github.com/llnnn-ux/termux-dot
+git clone https://github.com/u0a266/termux-dot
 mkdir ~/.termux
 echo "Linking dotfiles..."
 ln -sf ~/termux-dot/.termux/termux.properties ~/.termux/termux.properties
