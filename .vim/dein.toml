@@ -37,3 +37,9 @@ repo = 'simeji/winresizer'
 
 [[plugins]]
 repo = 'ryanoasis/vim-devicons'
+
+[[plugins]]
+repo = 'fatih/vim-go'
+
+[[plugins]]
+repo = 'alvan/vim-closetag'
