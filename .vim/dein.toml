@@ -31,3 +31,9 @@ rev = "release"
 
 [[plugins]]
 repo = 'iamcco/markdown-preview.nvim'
+
+[[plugins]]
+repo = 'simeji/winresizer'
+
+[[plugins]]
+repo = 'ryanoasis/vim-devicons'
