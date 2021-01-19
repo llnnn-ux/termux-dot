@@ -1,51 +1,31 @@
-#!/usr/bin/env bash
-set -ue
-
-helpmsg() {
-  command echo "Usage: $0 [--help | -h]" 0>&2
-  command echo ""
-}
-
-link_to_homedir() {
-  command echo "backup old dotfiles..."
-  if [ ! -d "$HOME/.dotbackup" ];then
-    command echo "$HOME/.dotbackup not found. Auto Make it"
-    command mkdir "$HOME/.dotbackup"
-  fi
-
-  local script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd -P)"
-  local dotdir=$(dirname ${script_dir})
-  if [[ "$HOME" != "$dotdir" ]];then
-    for f in $dotdir/.??*; do
-      [[ `basename $f` == ".git" ]] && continue
-      if [[ -L "$HOME/`basename $f`" ]];then
-        command rm -f "$HOME/`basename $f`"
-      fi
-      if [[ -e "$HOME/`basename $f`" ]];then
-        command mv "$HOME/`basename $f`" "$HOME/.dotbackup"
-      fi
-      command ln -snf $f $HOME
-    done
-  else
-    command echo "same install src dest"
-  fi
-}
-
-while [ $# -gt 0 ];do
-  case ${1} in
-    --debug|-d)
-      set -uex
-      ;;
-    --help|-h)
-      helpmsg
-      exit 1
-      ;;
-    *)
-      ;;
-  esac
-  shift
-done
-
-link_to_homedir
-git config --global include.path "~/.gitconfig_shared"
-command echo -e "\e[1;36m Install completed!!!! \e[m"
+echo "Installing packages..."
+pkg i -y openssh nano python nyancat git wget zsh neofetch fish curl proot file aria2 p7zip neovim bat exa dnsutils nodejs fzf vim cmus nmap
+echo "Installing pip packages..."
+pip install -U youtube-dl setuptools pip
+echo "Cloning zsh plugins..." 
+cd ~; mkdir .zsh; cd .zsh
+git clone https://github.com/zsh-users/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-completions
+git clone https://github.com/zsh-users/zsh-history-substring-search
+git clone --depth=1 https://github.com/denysdovhan/spaceship-prompt
+cd ~
+git clone https://github.com/u0a266/termux-dot
+mkdir ~/.termux
+echo "Linking dotfiles..."
+ln -sf ~/termux-dot/.termux/termux.properties ~/.termux/termux.properties
+ln -sf ~/termux-dot/.termux/colors.properties ~/.termux/colors.properties
+ln -sf ~/termux-dot/.aliasrc ~/.aliasrc
+ln -sf ~/termux-dot/.zprofile ~/.zprofile
+ln -sf ~/termux-dot/.zshrc ~/.zshrc
+ln -sf ~/termux-dot/.gitconfig ~/.gitconfig
+ln -sf ~/termux-dot/.vimrc ~/.vimrc
+mkdir ~/.vim; ln -sf ~/termux-dot/.vim/dein.toml ~/.vim/dein.toml
+mkdir -p ~/.config/nvim; ln -sf ~/termux-dot/.config/nvim/init.vim ~/.config/nvim/init.vim
+mkdir $PREFIX/share/zsh/site-functions; ln -sf ~/.zsh/spaceship-prompt/spaceship.zsh $PREFIX/share/zsh/site-functions/prompt_spaceship_setup
+wget "https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/JetBrainsMono/Regular/complete/JetBrains%20Mono%20Regular%20Nerd%20Font%20Complete.ttf?raw=true" -qO ~/.termux/font.ttf
+chsh -s zsh
+echo "Setting vim plugins"
+cd ~
+curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh -O; chmod 755 ~/installer.sh; ~/installer.sh ~/.dein; rm -f ~/installer.sh
+echo "Done!\nRestart Termux"
